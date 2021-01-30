@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component
 class Computer @Autowired constructor(private val musicPlayer: MusicPlayer) {
     private val id = 1
     override fun toString(): String {
-        return "Computer $id: ${musicPlayer.playMusic()}"
+        return "Computer $id: ${musicPlayer.playMusic(MusicType.ROCK)}"
     }
 }

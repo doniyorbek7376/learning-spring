@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component
 
 @Component("classicalMusic")
 class ClassicalMusic:Music {
-    override fun getSong(): String {
-        return "Classical music"
+
+    override fun getSongs(): List<String> {
+        return listOf("Classical music 1", "Classical music 2", "Classical music 3")
     }
 }
