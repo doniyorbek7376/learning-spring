@@ -8,9 +8,12 @@ class MusicPlayer() {
     private var music: Music? = null
     var volume: Int = 0
     var name:String = ""
-
-    @Autowired
+//    @Autowired
     constructor(music:Music):this() {
+        this.music = music
+    }
+    @Autowired
+    fun setMusic(music:Music) {
         this.music = music
     }
     fun playMusic() {
