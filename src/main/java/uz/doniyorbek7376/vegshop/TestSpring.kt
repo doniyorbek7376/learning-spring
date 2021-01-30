@@ -6,7 +6,7 @@ fun main() {
     val context = ClassPathXmlApplicationContext(
             "applicationContext.xml"
     )
-    val musicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
-    musicPlayer.playMusic()
+    val computer = context.getBean("computer", Computer::class.java)
+    println(computer)
     context.close()
 }

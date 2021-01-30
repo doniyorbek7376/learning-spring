@@ -12,7 +12,7 @@ class MusicPlayer() {
     constructor(music:Music):this() {
         this.music = music
     }
-    fun playMusic() {
-        println(music?.getSong())
+    fun playMusic():String {
+        return music?.getSong()?:""
     }
 }
