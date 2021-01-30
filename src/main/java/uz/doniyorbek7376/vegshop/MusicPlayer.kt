@@ -1,18 +1,20 @@
 package uz.doniyorbek7376.vegshop;
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 
 @Component("musicPlayer")
 class MusicPlayer() {
     @Autowired
-    private var music: Music? = null
+    @Qualifier("classicalMusic")
+    private lateinit var music1: Music
+    @Autowired
+    @Qualifier("rockMusic")
+    private lateinit var music2: Music
     var volume: Int = 0
     var name:String = ""
-    constructor(music:Music):this() {
-        this.music = music
-    }
     fun playMusic():String {
-        return music?.getSong()?:""
+        return music1.getSong()+" "+music2.getSong()
     }
 }
