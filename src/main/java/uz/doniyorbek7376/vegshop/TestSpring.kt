@@ -6,11 +6,9 @@ fun main() {
     val context = ClassPathXmlApplicationContext(
             "applicationContext.xml"
     )
-//    val firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
-//    val secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
-//    println(firstMusicPlayer)
-//    println(secondMusicPlayer)
-    val music:Music = context.getBean("classicalMusic", Music::class.java)
-    println(music.getSong())
+    val music1 = context.getBean("classicalMusic", Music::class.java)
+    val music2 = context.getBean("rockMusic", Music::class.java)
+    println(music1.getSong())
+    println(music2.getSong())
     context.close()
 }
