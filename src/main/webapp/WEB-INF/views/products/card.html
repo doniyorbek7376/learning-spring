@@ -1,0 +1,31 @@
+<html xmlns:th="http://thymeleaf.org">
+<head></head>
+<body>
+<div th:fragment="fragment_card (product)">
+    <figure class="card">
+        <div class="card__emoji" th:text="${product.image + product.image}"></div>
+        <div class="card__title-box">
+            <h2 class="card__title" th:text="${product.productName}"></h2>
+        </div>
+
+        <div class="card__details">
+            <div class="card__detail-box" th:classappend="${product.organic} ? non-existing-class:  not-organic">
+                <h6 class="card__detail card__detail--organic">Organic!</h6>
+            </div>
+
+            <div class="card__detail-box">
+                <h6 class="card__detail" th:text="${product.quantity} +' per 📦'" ></h6>
+            </div>
+
+            <div class="card__detail-box">
+                <h6 class="card__detail card__detail--price" th:text="${product.price}+'€'" ></h6>
+            </div>
+        </div>
+
+        <a class="card__link" th:href="@{/products/{id}(id=${product.id})}">
+            <span>Detail <i class="emoji-right">👉</i></span>
+        </a>
+    </figure>
+</div>
+</body>
+</html>

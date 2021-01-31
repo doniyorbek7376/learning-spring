@@ -23,6 +23,7 @@ open class SpringConfig @Autowired constructor(private val applicationContext: A
             setApplicationContext(applicationContext)
             prefix = "/WEB-INF/views/"
             suffix = ".html"
+            characterEncoding = "UTF-8"
         }
     }
 
@@ -37,6 +38,8 @@ open class SpringConfig @Autowired constructor(private val applicationContext: A
     override fun configureViewResolvers(registry: ViewResolverRegistry) {
         registry.viewResolver(ThymeleafViewResolver().apply {
             templateEngine = templateEngine()
+            characterEncoding = "UTF-8"
+            contentType = "text/html; charset=UTF-8"
         })
     }
 }
