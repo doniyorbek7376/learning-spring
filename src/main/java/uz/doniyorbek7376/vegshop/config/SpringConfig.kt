@@ -21,8 +21,8 @@ open class SpringConfig @Autowired constructor(private val applicationContext: A
     open fun templateResolver(): SpringResourceTemplateResolver {
         return SpringResourceTemplateResolver().apply {
             setApplicationContext(applicationContext)
-            suffix = "/WEB-INF/views/"
-            prefix = ".html"
+            prefix = "/WEB-INF/views/"
+            suffix = ".html"
         }
     }
 
